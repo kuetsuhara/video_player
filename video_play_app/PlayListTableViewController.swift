@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import Alamofire
+import SVProgressHUD
+import SwiftyJSON
 
 class PlayListTableViewController: UITableViewController {
-        
+    
+    let apiUrl = "https://gist.githubusercontent.com/sa2dai/04da5a56718b52348fbe05e11e70515c/raw/60a93bd0191a66141cab185a1b814a9828ab12a2/code_test_iOS.json"
+    
+    var resultData :JSON = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // call api
+        self.allPlaylistApi()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +33,24 @@ class PlayListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.resultData.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        print("JSON: \(self.resultData)")
+        cell.textLabel?.text = self.resultData[indexPath.row]["description"].stringValue
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,5 +96,26 @@ class PlayListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Call API
+    func allPlaylistApi() {
+        SVProgressHUD.show() // indicator show
+        
+        // call api
+        Alamofire.request(apiUrl).responseJSON { response in
+            
+            switch response.result {
+            case .success:
+                self.resultData = JSON(response.result.value ?? kill)
+                print("JSON: \(self.resultData)")
+                self.tableView.reloadData()
+                
+            case .failure(let error):
+                print(error)
+            }
+            SVProgressHUD.dismiss()
+        }
+
+    }
     
 }
