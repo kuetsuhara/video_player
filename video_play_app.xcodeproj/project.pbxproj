@@ -555,6 +555,7 @@
 			baseConfigurationReference = FD36114573511FE6AD5DDD59 /* Pods-video_play_app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = video_play_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -564,7 +565,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssdkfk.video-play-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -573,6 +574,7 @@
 			baseConfigurationReference = 21D2EEC0AFE91A495880D8FE /* Pods-video_play_app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = video_play_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -582,7 +584,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssdkfk.video-play-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
