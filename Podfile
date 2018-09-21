@@ -9,7 +9,7 @@ target 'video_play_app' do
     pod "AlamofireImage", "~> 3.4"
     pod "SVProgressHUD"
     pod "SwiftyJSON"
-  # Pods for video_play_app
+    pod "Hex"
 
   target 'video_play_appTests' do
     inherit! :search_paths

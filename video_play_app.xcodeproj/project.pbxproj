@@ -11,7 +11,6 @@
 		8B9EFCA984152B83F1B45DFA /* Pods_video_play_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B5EF4A44D6236213B31AA9 /* Pods_video_play_appUITests.framework */; };
 		B5F423EDF182884E09D0E3E9 /* Pods_video_play_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980CEEAF5F83091B6D620E37 /* Pods_video_play_app.framework */; };
 		CED736342153AA5300B6FE6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED736332153AA5300B6FE6C /* AppDelegate.swift */; };
-		CED736362153AA5300B6FE6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED736352153AA5300B6FE6C /* ViewController.swift */; };
 		CED7363B2153AA5400B6FE6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED7363A2153AA5400B6FE6C /* Assets.xcassets */; };
 		CED736492153AA5400B6FE6C /* video_play_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED736482153AA5400B6FE6C /* video_play_appTests.swift */; };
 		CED736542153AA5400B6FE6C /* video_play_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED736532153AA5400B6FE6C /* video_play_appUITests.swift */; };
@@ -47,7 +46,6 @@
 		B6AC4DA6F86A0F7E76EF038A /* Pods-video_play_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-video_play_appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-video_play_appTests/Pods-video_play_appTests.release.xcconfig"; sourceTree = "<group>"; };
 		CED736302153AA5300B6FE6C /* video_play_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = video_play_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED736332153AA5300B6FE6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CED736352153AA5300B6FE6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CED7363A2153AA5400B6FE6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CED7363F2153AA5400B6FE6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED736442153AA5400B6FE6C /* video_play_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = video_play_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,12 +141,10 @@
 			children = (
 				CED736332153AA5300B6FE6C /* AppDelegate.swift */,
 				CEF8B4622153AE0400863261 /* PlayListTableViewController.swift */,
-				CED736352153AA5300B6FE6C /* ViewController.swift */,
+				CEEFEE9F215483E3000582FE /* PlayListTableViewCell.swift */,
 				CED7363A2153AA5400B6FE6C /* Assets.xcassets */,
 				CED7363F2153AA5400B6FE6C /* Info.plist */,
 				CEF8B4662153AE8200863261 /* xib */,
-				CEEFEE9F215483E3000582FE /* PlayListTableViewCell.swift */,
-				CEEFEEA0215483E3000582FE /* PlayListTableViewCell.xib */,
 			);
 			path = video_play_app;
 			sourceTree = "<group>";
@@ -175,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF8B4632153AE0400863261 /* PlayListTableViewController.xib */,
+				CEEFEEA0215483E3000582FE /* PlayListTableViewCell.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -355,6 +352,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-video_play_app/Pods-video_play_app-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Hex/Hex.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -362,6 +360,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hex.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -395,7 +394,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED736362153AA5300B6FE6C /* ViewController.swift in Sources */,
 				CED736342153AA5300B6FE6C /* AppDelegate.swift in Sources */,
 				CEF8B4642153AE0400863261 /* PlayListTableViewController.swift in Sources */,
 				CEEFEEA1215483E3000582FE /* PlayListTableViewCell.swift in Sources */,

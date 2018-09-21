@@ -11,6 +11,7 @@ import Alamofire
 import AlamofireImage
 import SVProgressHUD
 import SwiftyJSON
+import Hex
 
 class PlayListTableViewController: UITableViewController {
     
@@ -27,6 +28,11 @@ class PlayListTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "PlayListTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         self.tableView.estimatedRowHeight = 300
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // navigation bar setting
+        self.title = "Your Playlist"
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "CD1414")
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +56,10 @@ class PlayListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // make cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! PlayListTableViewCell
+        // set select color
+        let selectedBackgroundView: UIView = UIView()
+        selectedBackgroundView.backgroundColor = UIColor.black
+        cell.selectedBackgroundView = selectedBackgroundView
         
         // insert data
         cell.presenterLabel?.text   = self.resultData[indexPath.row]["presenter_name"].stringValue
@@ -60,7 +70,6 @@ class PlayListTableViewController: UITableViewController {
         // get image
         Alamofire.request(self.resultData[indexPath.row]["thumbnail_url"].stringValue).responseImage { response in
             if let image = response.result.value {
-                print("image downloaded: \(image)")
                 cell.thumbImageView.image = image
             }
         }
@@ -78,6 +87,7 @@ class PlayListTableViewController: UITableViewController {
         return outputString!
     }
 
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
