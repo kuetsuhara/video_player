@@ -20,9 +20,8 @@ import Hex
 class PlayListTableViewController: UITableViewController {
     
     private let apiUrl = "https://quipper.github.io/native-technical-exam/playlist.json"
-    
-    var resultData :JSON = []
-    
+    private var resultData :JSON = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // call api
@@ -33,10 +32,20 @@ class PlayListTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 300
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
+        // add refresh view
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(PlayListTableViewController.refresh(sender:)), for: .valueChanged)
+        
         // navigation bar setting
         self.title = "Your Playlist"
         self.navigationController?.navigationBar.barTintColor = UIColor(hex: "CD1414")
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+
+    
+    @objc func refresh(sender: UIRefreshControl) {
+        // データフェッチが終わったらUIRefreshControl.endRefreshing()を呼ぶ必要がある
+        self.getPlaylist()
     }
 
     override func didReceiveMemoryWarning() {
@@ -142,6 +151,7 @@ class PlayListTableViewController: UITableViewController {
     }
     */
     
+    
     // MARK: - Utility
     func getPlaylist() {
         SVProgressHUD.show() // show indicator
@@ -152,13 +162,14 @@ class PlayListTableViewController: UITableViewController {
             switch response.result {
             case .success:
                 self.resultData = JSON(response.result.value ?? kill)
-                print("JSON: \(self.resultData)")
                 self.tableView.reloadData()
                 
             case .failure(let error):
                 print(error)
+                self.displayAlert()
             }
             SVProgressHUD.dismiss() // hide indicator
+            self.refreshControl?.endRefreshing() // end refreshview
         }
     }
     
@@ -173,7 +184,18 @@ class PlayListTableViewController: UITableViewController {
         return outputString!
     }
     
-
+    // show error alert
+    func displayAlert() {
+        let title = "Sorry"
+        let message = "Connection error\nPlease try again."
+        let okText = "OK"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(okayButton)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     
     

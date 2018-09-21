@@ -14,6 +14,7 @@
 		CED7363B2153AA5400B6FE6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED7363A2153AA5400B6FE6C /* Assets.xcassets */; };
 		CED736492153AA5400B6FE6C /* video_play_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED736482153AA5400B6FE6C /* video_play_appTests.swift */; };
 		CED736542153AA5400B6FE6C /* video_play_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED736532153AA5400B6FE6C /* video_play_appUITests.swift */; };
+		CEDFCF4D2154D7950049CBD4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCF4C2154D7950049CBD4 /* LaunchScreen.xib */; };
 		CEEFEEA1215483E3000582FE /* PlayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFEE9F215483E3000582FE /* PlayListTableViewCell.swift */; };
 		CEEFEEA2215483E3000582FE /* PlayListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEFEEA0215483E3000582FE /* PlayListTableViewCell.xib */; };
 		CEEFEEA82154CD45000582FE /* LandscapePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFEEA72154CD45000582FE /* LandscapePlayerViewController.swift */; };
@@ -55,6 +56,7 @@
 		CED7364F2153AA5400B6FE6C /* video_play_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = video_play_appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED736532153AA5400B6FE6C /* video_play_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = video_play_appUITests.swift; sourceTree = "<group>"; };
 		CED736552153AA5400B6FE6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEDFCF4C2154D7950049CBD4 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		CEEFEE9F215483E3000582FE /* PlayListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListTableViewCell.swift; sourceTree = "<group>"; };
 		CEEFEEA0215483E3000582FE /* PlayListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListTableViewCell.xib; sourceTree = "<group>"; };
 		CEEFEEA72154CD45000582FE /* LandscapePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapePlayerViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				CEF8B4632153AE0400863261 /* PlayListTableViewController.xib */,
 				CEEFEEA0215483E3000582FE /* PlayListTableViewCell.xib */,
+				CEDFCF4C2154D7950049CBD4 /* LaunchScreen.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDFCF4D2154D7950049CBD4 /* LaunchScreen.xib in Resources */,
 				CED7363B2153AA5400B6FE6C /* Assets.xcassets in Resources */,
 				CEEFEEA2215483E3000582FE /* PlayListTableViewCell.xib in Resources */,
 				CEF8B4652153AE0400863261 /* PlayListTableViewController.xib in Resources */,
@@ -555,8 +559,8 @@
 			baseConfigurationReference = FD36114573511FE6AD5DDD59 /* Pods-video_play_app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = video_play_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -574,8 +578,8 @@
 			baseConfigurationReference = 21D2EEC0AFE91A495880D8FE /* Pods-video_play_app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = video_play_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
