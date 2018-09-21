@@ -15,6 +15,7 @@ class PlayListTableViewCell: UITableViewCell {
     @IBOutlet weak var presenterLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

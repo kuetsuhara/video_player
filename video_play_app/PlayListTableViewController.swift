@@ -14,20 +14,19 @@ import SwiftyJSON
 
 class PlayListTableViewController: UITableViewController {
     
-    let apiUrl = "https://gist.githubusercontent.com/sa2dai/04da5a56718b52348fbe05e11e70515c/raw/60a93bd0191a66141cab185a1b814a9828ab12a2/code_test_iOS.json"
+    private let apiUrl = "https://gist.githubusercontent.com/sa2dai/04da5a56718b52348fbe05e11e70515c/raw/60a93bd0191a66141cab185a1b814a9828ab12a2/code_test_iOS.json"
     
     var resultData :JSON = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // call api
-        self.allPlaylistApi()
+        self.getPlaylist()
         
+        // Tableview setting
         self.tableView.register(UINib(nibName: "PlayListTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
-        
         self.tableView.estimatedRowHeight = 300
         self.tableView.rowHeight = UITableViewAutomaticDimension
-//        self.tableView.rowHeight = 300
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,13 +48,14 @@ class PlayListTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        // make cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! PlayListTableViewCell
         
         // insert data
-        cell.presenterLabel?.text = self.resultData[indexPath.row]["presenter_name"].stringValue
-        cell.titleLabel?.text = self.resultData[indexPath.row]["title"].stringValue
+        cell.presenterLabel?.text   = self.resultData[indexPath.row]["presenter_name"].stringValue
+        cell.titleLabel?.text       = self.resultData[indexPath.row]["title"].stringValue
         cell.descriptionLabel?.text = self.resultData[indexPath.row]["description"].stringValue
+        cell.timeLabel?.text        = self.convertDuration(duration: self.resultData[indexPath.row]["video_duration"].intValue)
         
         // get image
         Alamofire.request(self.resultData[indexPath.row]["thumbnail_url"].stringValue).responseImage { response in
@@ -64,11 +64,19 @@ class PlayListTableViewController: UITableViewController {
                 cell.thumbImageView.image = image
             }
         }
-        
-//        cell.thumbImageView.image = Alamofire.
         return cell
     }
     
+    // msec to [min:sec]
+    func convertDuration(duration: Int) -> String{
+        
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [.minute,.hour,.second]
+        let outputString = formatter.string(from: TimeInterval(duration/1000)) // duration is msec
+        
+        return outputString!
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -115,9 +123,9 @@ class PlayListTableViewController: UITableViewController {
     }
     */
     
-    // MARK: - Call API
-    func allPlaylistApi() {
-        SVProgressHUD.show() // indicator show
+    // MARK: - Utility
+    func getPlaylist() {
+        SVProgressHUD.show() // show indicator
         
         // call api
         Alamofire.request(apiUrl).responseJSON { response in
@@ -131,9 +139,11 @@ class PlayListTableViewController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
-            SVProgressHUD.dismiss()
+            SVProgressHUD.dismiss() // hide indicator
         }
-
     }
+    
+    
+    
     
 }
