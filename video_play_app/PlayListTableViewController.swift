@@ -6,7 +6,11 @@
 //  Copyright © 2018年 Kazutoshi Uetsuhara. All rights reserved.
 //
 
+// kit
 import UIKit
+import AVKit
+
+// pods
 import Alamofire
 import AlamofireImage
 import SVProgressHUD
@@ -15,7 +19,7 @@ import Hex
 
 class PlayListTableViewController: UITableViewController {
     
-    private let apiUrl = "https://gist.githubusercontent.com/sa2dai/04da5a56718b52348fbe05e11e70515c/raw/60a93bd0191a66141cab185a1b814a9828ab12a2/code_test_iOS.json"
+    private let apiUrl = "https://quipper.github.io/native-technical-exam/playlist.json"
     
     var resultData :JSON = []
     
@@ -76,17 +80,27 @@ class PlayListTableViewController: UITableViewController {
         return cell
     }
     
-    // msec to [min:sec]
-    func convertDuration(duration: Int) -> String{
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("select!")
         
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .positional
-        formatter.allowedUnits = [.minute,.hour,.second]
-        let outputString = formatter.string(from: TimeInterval(duration/1000)) // duration is msec
+        let videoUrl = URL(string: self.resultData[indexPath.row]["video_url"].stringValue)
         
-        return outputString!
+        if let url = videoUrl{
+            let avPlayer = AVPlayer(url: url)
+            let avPlayerViewController = AVPlayerViewController()
+            avPlayerViewController.player = avPlayer
+            self.present(avPlayerViewController, animated: true, completion: nil)
+            
+        }
+        
+//        let aPlayerViewController = AVPlayerViewController()
+//        aPlayerViewController.player = aPlayer
+        
+        
+        
     }
-
+    
+    
     
     /*
     // Override to support conditional editing of the table view.
@@ -153,6 +167,18 @@ class PlayListTableViewController: UITableViewController {
         }
     }
     
+    // msec to [min:sec]
+    func convertDuration(duration: Int) -> String{
+        
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [.minute,.hour,.second]
+        let outputString = formatter.string(from: TimeInterval(duration/1000)) // duration is msec
+        
+        return outputString!
+    }
+    
+
     
     
     
