@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 import SVProgressHUD
 import SwiftyJSON
 
@@ -22,6 +23,11 @@ class PlayListTableViewController: UITableViewController {
         // call api
         self.allPlaylistApi()
         
+        self.tableView.register(UINib(nibName: "PlayListTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        
+        self.tableView.estimatedRowHeight = 300
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+//        self.tableView.rowHeight = 300
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,11 +49,23 @@ class PlayListTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        print("JSON: \(self.resultData)")
-        cell.textLabel?.text = self.resultData[indexPath.row]["description"].stringValue
 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! PlayListTableViewCell
+        
+        // insert data
+        cell.presenterLabel?.text = self.resultData[indexPath.row]["presenter_name"].stringValue
+        cell.titleLabel?.text = self.resultData[indexPath.row]["title"].stringValue
+        cell.descriptionLabel?.text = self.resultData[indexPath.row]["description"].stringValue
+        
+        // get image
+        Alamofire.request(self.resultData[indexPath.row]["thumbnail_url"].stringValue).responseImage { response in
+            if let image = response.result.value {
+                print("image downloaded: \(image)")
+                cell.thumbImageView.image = image
+            }
+        }
+        
+//        cell.thumbImageView.image = Alamofire.
         return cell
     }
     

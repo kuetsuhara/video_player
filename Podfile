@@ -6,6 +6,7 @@ target 'video_play_app' do
   use_frameworks!
 
     pod "Alamofire"
+    pod "AlamofireImage", "~> 3.4"
     pod "SVProgressHUD"
     pod "SwiftyJSON"
   # Pods for video_play_app
