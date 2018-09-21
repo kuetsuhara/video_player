@@ -16,6 +16,7 @@
 		CED736542153AA5400B6FE6C /* video_play_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED736532153AA5400B6FE6C /* video_play_appUITests.swift */; };
 		CEEFEEA1215483E3000582FE /* PlayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFEE9F215483E3000582FE /* PlayListTableViewCell.swift */; };
 		CEEFEEA2215483E3000582FE /* PlayListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEFEEA0215483E3000582FE /* PlayListTableViewCell.xib */; };
+		CEEFEEA82154CD45000582FE /* LandscapePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFEEA72154CD45000582FE /* LandscapePlayerViewController.swift */; };
 		CEF8B4642153AE0400863261 /* PlayListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B4622153AE0400863261 /* PlayListTableViewController.swift */; };
 		CEF8B4652153AE0400863261 /* PlayListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF8B4632153AE0400863261 /* PlayListTableViewController.xib */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		CED736552153AA5400B6FE6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEFEE9F215483E3000582FE /* PlayListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListTableViewCell.swift; sourceTree = "<group>"; };
 		CEEFEEA0215483E3000582FE /* PlayListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListTableViewCell.xib; sourceTree = "<group>"; };
+		CEEFEEA72154CD45000582FE /* LandscapePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapePlayerViewController.swift; sourceTree = "<group>"; };
 		CEF8B4622153AE0400863261 /* PlayListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListTableViewController.swift; sourceTree = "<group>"; };
 		CEF8B4632153AE0400863261 /* PlayListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListTableViewController.xib; sourceTree = "<group>"; };
 		DBD93572EA7C8B7E94AD9A41 /* Pods-video_play_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-video_play_appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-video_play_appTests/Pods-video_play_appTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				CED736332153AA5300B6FE6C /* AppDelegate.swift */,
 				CEF8B4622153AE0400863261 /* PlayListTableViewController.swift */,
 				CEEFEE9F215483E3000582FE /* PlayListTableViewCell.swift */,
+				CEEFEEA72154CD45000582FE /* LandscapePlayerViewController.swift */,
 				CED7363A2153AA5400B6FE6C /* Assets.xcassets */,
 				CED7363F2153AA5400B6FE6C /* Info.plist */,
 				CEF8B4662153AE8200863261 /* xib */,
@@ -395,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED736342153AA5300B6FE6C /* AppDelegate.swift in Sources */,
+				CEEFEEA82154CD45000582FE /* LandscapePlayerViewController.swift in Sources */,
 				CEF8B4642153AE0400863261 /* PlayListTableViewController.swift in Sources */,
 				CEEFEEA1215483E3000582FE /* PlayListTableViewCell.swift in Sources */,
 			);

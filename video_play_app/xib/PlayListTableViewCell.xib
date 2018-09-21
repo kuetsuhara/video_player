@@ -78,7 +78,6 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="XLi-uY-aLD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2QD-ag-Hcc"/>
-                    <constraint firstItem="XLi-uY-aLD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="188" id="3vb-Z0-OUF"/>
                     <constraint firstItem="k6m-YG-TFP" firstAttribute="leading" secondItem="asP-Ar-Sbp" secondAttribute="trailing" constant="-67" id="74O-c6-Ldj"/>
                     <constraint firstItem="rPa-3I-JFz" firstAttribute="top" secondItem="asP-Ar-Sbp" secondAttribute="bottom" constant="11" id="AEk-aj-qPZ"/>
                     <constraint firstItem="asP-Ar-Sbp" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Amn-Su-z4L"/>
@@ -88,6 +87,7 @@
                     <constraint firstAttribute="trailing" secondItem="Csm-Fv-ItR" secondAttribute="trailing" constant="16" id="Oif-im-hYd"/>
                     <constraint firstAttribute="trailing" secondItem="0XB-9I-zTc" secondAttribute="trailing" constant="16" id="VxT-iC-5lc"/>
                     <constraint firstItem="k6m-YG-TFP" firstAttribute="top" secondItem="asP-Ar-Sbp" secondAttribute="bottom" constant="-33" id="X6J-33-aku"/>
+                    <constraint firstItem="XLi-uY-aLD" firstAttribute="top" secondItem="asP-Ar-Sbp" secondAttribute="bottom" constant="8" id="dMo-Ov-tMr"/>
                     <constraint firstAttribute="bottom" secondItem="0XB-9I-zTc" secondAttribute="bottom" constant="25.5" id="dyG-6X-trM"/>
                     <constraint firstAttribute="trailing" secondItem="wkT-UK-nkV" secondAttribute="trailing" constant="16" id="e3V-cZ-TTM"/>
                     <constraint firstItem="Csm-Fv-ItR" firstAttribute="top" secondItem="rPa-3I-JFz" secondAttribute="bottom" constant="5" id="gIy-My-KGW"/>

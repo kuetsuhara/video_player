@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  video_play_app
 //
-//  Created by 上津原 一利 [NEXT] on 2018/09/20.
+//  Created by Kazutoshi Uetsuhara on 2018/09/20.
 //  Copyright © 2018年 Kazutoshi Uetsuhara. All rights reserved.
 //
 

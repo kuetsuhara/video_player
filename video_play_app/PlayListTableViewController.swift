@@ -2,7 +2,7 @@
 //  PlayListTableViewController.swift
 //  video_play_app
 //
-//  Created by 上津原 一利 [NEXT] on 2018/09/20.
+//  Created by Kazutoshi Uetsuhara on 2018/09/20.
 //  Copyright © 2018年 Kazutoshi Uetsuhara. All rights reserved.
 //
 
@@ -65,6 +65,9 @@ class PlayListTableViewController: UITableViewController {
         selectedBackgroundView.backgroundColor = UIColor.black
         cell.selectedBackgroundView = selectedBackgroundView
         
+        // reset cache image
+        cell.thumbImageView.image = UIImage(named: "default_image")
+        
         // insert data
         cell.presenterLabel?.text   = self.resultData[indexPath.row]["presenter_name"].stringValue
         cell.titleLabel?.text       = self.resultData[indexPath.row]["title"].stringValue
@@ -81,23 +84,15 @@ class PlayListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select!")
-        
+        // video play
         let videoUrl = URL(string: self.resultData[indexPath.row]["video_url"].stringValue)
         
         if let url = videoUrl{
             let avPlayer = AVPlayer(url: url)
-            let avPlayerViewController = AVPlayerViewController()
+            let avPlayerViewController = LandscapePlayerViewController()
             avPlayerViewController.player = avPlayer
             self.present(avPlayerViewController, animated: true, completion: nil)
-            
-        }
-        
-//        let aPlayerViewController = AVPlayerViewController()
-//        aPlayerViewController.player = aPlayer
-        
-        
-        
+        }        
     }
     
     
