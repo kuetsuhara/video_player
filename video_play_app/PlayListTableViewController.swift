@@ -19,7 +19,7 @@ import Hex
 
 class PlayListTableViewController: UITableViewController {
     
-    private let apiUrl = "https://quipper.github.io/native-technical-exam/playlist.json"
+    private let apiUrl = "https://quipper.github.io/native-technical-exam/playlist.jso"
     private var resultData :JSON = []
 
     override func viewDidLoad() {
@@ -189,13 +189,20 @@ class PlayListTableViewController: UITableViewController {
         let title = "Sorry"
         let message = "Connection error\nPlease try again."
         let okText = "OK"
+        let taText = "Try again"
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.cancel, handler: nil)
+
+        let tryAgainButton = UIAlertAction(title: taText, style: UIAlertActionStyle.default) { (action: UIAlertAction!) -> Void in
+            self.getPlaylist()
+        }
         alert.addAction(okayButton)
+        alert.addAction(tryAgainButton)
         
         present(alert, animated: true, completion: nil)
     }
+    
     
     
     
