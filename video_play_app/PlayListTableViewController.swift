@@ -19,7 +19,7 @@ import Hex
 
 class PlayListTableViewController: UITableViewController {
     
-    private let apiUrl = "https://quipper.github.io/native-technical-exam/playlist.jso"
+    private let apiUrl = "https://quipper.github.io/native-technical-exam/playlist.json"
     private var resultData :JSON = []
 
     override func viewDidLoad() {
