@@ -24,6 +24,8 @@ class PlayListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // call api
         self.getPlaylist()
         
@@ -42,6 +44,27 @@ class PlayListTableViewController: UITableViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+
+        var count = 0
+        
+        if UserDefaults.standard.object(forKey: "visit_count") != nil {
+            count = UserDefaults.standard.integer(forKey: "visit_count") + 1
+            UserDefaults.standard.set(count, forKey: "visit_count")
+        }else{
+            count = 1
+            UserDefaults.standard.set(count, forKey: "visit_count")
+        }
+        if count >= 1 {
+            super.viewWillAppear(animated)
+            let tutorialViewCintroller = TutorialViewController()
+            tutorialViewCintroller.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+            self.present(tutorialViewCintroller, animated: true, completion: nil)
+
+        }
+        
+        
+    }
     
     @objc func refresh(sender: UIRefreshControl) {
         // データフェッチが終わったらUIRefreshControl.endRefreshing()を呼ぶ必要がある
