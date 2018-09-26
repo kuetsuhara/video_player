@@ -26,7 +26,6 @@ class PlayListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // call api
         self.getPlaylist()
         
@@ -38,14 +37,15 @@ class PlayListTableViewController: UITableViewController {
         // add refresh view
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(PlayListTableViewController.refresh(sender:)), for: .valueChanged)
+        self.refreshControl?.tintColor = UIColor.white
         
         // navigation bar setting
         self.title = "Movies"
         self.navigationController?.navigationBar.barTintColor = UIColor(hex: "0B41A1")
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        
-        let rightBarButtonItem = UIBarButtonItem(title: "Register", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightbarButtonAction))
+        // register button
+        let rightBarButtonItem = UIBarButtonItem(title: "Register", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.registerAction))
         rightBarButtonItem.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
@@ -70,13 +70,19 @@ class PlayListTableViewController: UITableViewController {
             self.present(tutorialViewCintroller, animated: true, completion: nil)
 
         }
+        
+        // disp register alert
+        if count % 10 == 0 {
+            displayRegisterAlert()
+        }
+        
     }
     
     @objc func refresh(sender: UIRefreshControl) {
         self.getPlaylist()
     }
 
-    @objc func rightbarButtonAction(){
+    @objc func registerAction(){
         guard let url = URL(string: resiterUrl) else {return}
         UIApplication.shared.open(url)
     }
@@ -192,7 +198,24 @@ class PlayListTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    
-    
+    // show resiter alert
+    func displayRegisterAlert() {
+        let title = "Do you like this app?"
+        let message = "If you like this app, please make account"
+        let okText = "No thnaks"
+        let taText = "Regiter"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.cancel, handler: nil)
+        
+        let tryAgainButton = UIAlertAction(title: taText, style: UIAlertActionStyle.default) { (action: UIAlertAction!) -> Void in
+            self.registerAction()
+        }
+        alert.addAction(okayButton)
+        alert.addAction(tryAgainButton)
+        
+        present(alert, animated: true, completion: nil)
+
+    }
     
 }
