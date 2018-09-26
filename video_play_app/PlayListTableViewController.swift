@@ -39,9 +39,14 @@ class PlayListTableViewController: UITableViewController {
         self.refreshControl?.addTarget(self, action: #selector(PlayListTableViewController.refresh(sender:)), for: .valueChanged)
         
         // navigation bar setting
-        self.title = "Your Playlist"
-        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "CD1414")
+        self.title = "Movies"
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "0B41A1")
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        
+        let rightBarButtonItem = UIBarButtonItem(title: "Register", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightbarButtonAction))
+        rightBarButtonItem.tintColor = UIColor.white
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,22 +60,24 @@ class PlayListTableViewController: UITableViewController {
             count = 1
             UserDefaults.standard.set(count, forKey: "visit_count")
         }
-        if count >= 1 {
+        if count == 1 {
             super.viewWillAppear(animated)
             let tutorialViewCintroller = TutorialViewController()
             tutorialViewCintroller.modalTransitionStyle = UIModalTransitionStyle.coverVertical
             self.present(tutorialViewCintroller, animated: true, completion: nil)
 
         }
-        
-        
     }
     
     @objc func refresh(sender: UIRefreshControl) {
-        // データフェッチが終わったらUIRefreshControl.endRefreshing()を呼ぶ必要がある
         self.getPlaylist()
     }
 
+    @objc func rightbarButtonAction(){
+        guard let url = URL(string: "https://manage.studysapuri.jp/registration/accounts/new") else {return}
+        UIApplication.shared.open(url)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

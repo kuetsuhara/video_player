@@ -13,8 +13,8 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var skipButton: UIButton!
     
-
-    let img:[String] = ["tutorial_0","tutorial_1","tutorial_2","tutorial_3"]
+    // image files
+    private let img:[String] = ["tutorial_0","tutorial_1","tutorial_2","tutorial_3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +32,13 @@ class TutorialViewController: UIViewController {
         let s_width = Int(scrollViewSize.size.width)
         let s_height = Int(scrollViewSize.size.height)
         
-        for num in 0 ... img.count{
-            print(num)
+        for num in 0 ... img.count-1{
             let imageView = UIImageView()
             let xpoint = s_width * num
-            imageView.frame = CGRect(x: xpoint, y: 0, width: s_width - 10, height: s_height)
-            imageView.backgroundColor = UIColor.yellow
+            imageView.frame = CGRect(x: xpoint, y: 0, width: s_width, height: s_height)
+            imageView.backgroundColor = UIColor.white
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
+            imageView.image = UIImage(named: img[num])
             self.scrollView.addSubview(imageView)
         }
         

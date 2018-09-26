@@ -151,11 +151,10 @@
 				CEF8B4622153AE0400863261 /* PlayListTableViewController.swift */,
 				CEEFEE9F215483E3000582FE /* PlayListTableViewCell.swift */,
 				CEEFEEA72154CD45000582FE /* LandscapePlayerViewController.swift */,
+				CE9C8D53215A099B00E943F8 /* TutorialViewController.swift */,
 				CED7363A2153AA5400B6FE6C /* Assets.xcassets */,
 				CED7363F2153AA5400B6FE6C /* Info.plist */,
 				CEF8B4662153AE8200863261 /* xib */,
-				CE9C8D53215A099B00E943F8 /* TutorialViewController.swift */,
-				CE9C8D54215A099B00E943F8 /* TutorialViewController.xib */,
 			);
 			path = video_play_app;
 			sourceTree = "<group>";
@@ -183,6 +182,7 @@
 			children = (
 				CEF8B4632153AE0400863261 /* PlayListTableViewController.xib */,
 				CEEFEEA0215483E3000582FE /* PlayListTableViewCell.xib */,
+				CE9C8D54215A099B00E943F8 /* TutorialViewController.xib */,
 				CEDFCF4C2154D7950049CBD4 /* LaunchScreen.xib */,
 			);
 			path = xib;
