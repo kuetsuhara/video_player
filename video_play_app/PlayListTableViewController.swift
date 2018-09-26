@@ -203,7 +203,7 @@ class PlayListTableViewController: UITableViewController {
         let title = "Do you like this app?"
         let message = "If you like this app, please make account"
         let okText = "No thnaks"
-        let taText = "Regiter"
+        let taText = "Register"
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.cancel, handler: nil)
