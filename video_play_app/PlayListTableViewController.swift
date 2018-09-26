@@ -32,7 +32,7 @@ class PlayListTableViewController: UITableViewController {
         // Tableview setting
         self.tableView.register(UINib(nibName: "PlayListTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         self.tableView.estimatedRowHeight = 300
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         
         // add refresh view
         self.refreshControl = UIRefreshControl()
@@ -45,7 +45,7 @@ class PlayListTableViewController: UITableViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         // register button
-        let rightBarButtonItem = UIBarButtonItem(title: "Register", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.registerAction))
+        let rightBarButtonItem = UIBarButtonItem(title: "Register", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.registerAction))
         rightBarButtonItem.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
@@ -186,10 +186,10 @@ class PlayListTableViewController: UITableViewController {
         let okText = "OK"
         let taText = "Try again"
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.cancel, handler: nil)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
 
-        let tryAgainButton = UIAlertAction(title: taText, style: UIAlertActionStyle.default) { (action: UIAlertAction!) -> Void in
+        let tryAgainButton = UIAlertAction(title: taText, style: UIAlertAction.Style.default) { (action: UIAlertAction!) -> Void in
             self.getPlaylist()
         }
         alert.addAction(okayButton)
@@ -205,10 +205,10 @@ class PlayListTableViewController: UITableViewController {
         let okText = "No thnaks"
         let taText = "Register"
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.cancel, handler: nil)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
         
-        let tryAgainButton = UIAlertAction(title: taText, style: UIAlertActionStyle.default) { (action: UIAlertAction!) -> Void in
+        let tryAgainButton = UIAlertAction(title: taText, style: UIAlertAction.Style.default) { (action: UIAlertAction!) -> Void in
             self.registerAction()
         }
         alert.addAction(okayButton)

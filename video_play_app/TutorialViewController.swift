@@ -24,7 +24,7 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         
         // skip button action
-        self.skipButton.addTarget(self, action: #selector(buttonEvent(sender:)), for: UIControlEvents.touchUpInside)
+        self.skipButton.addTarget(self, action: #selector(buttonEvent(sender:)), for: UIControl.Event.touchUpInside)
         
         // page controle
         self.pageControle.currentPageIndicatorTintColor = UIColor.blue
@@ -44,7 +44,7 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
             let xpoint = s_width * num
             imageView.frame = CGRect(x: xpoint, y: 0, width: s_width, height: s_height)
             imageView.backgroundColor = UIColor.white
-            imageView.contentMode = UIViewContentMode.scaleAspectFit
+            imageView.contentMode = UIView.ContentMode.scaleAspectFit
             imageView.image = UIImage(named: img[num])
             self.scrollView.addSubview(imageView)
         }
@@ -67,7 +67,7 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         self.pageControle.currentPage = Int(pageNum)
         
         if pageNum == 3 {
-            self.skipButton.setTitle("Go", for: UIControlState.normal)
+            self.skipButton.setTitle("Go", for: UIControl.State.normal)
         }
         
     }

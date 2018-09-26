@@ -260,13 +260,16 @@
 				TargetAttributes = {
 					CED7362F2153AA5300B6FE6C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					CED736432153AA5400B6FE6C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = CED7362F2153AA5300B6FE6C;
 					};
 					CED7364E2153AA5400B6FE6C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = CED7362F2153AA5300B6FE6C;
 					};
 				};
@@ -576,7 +579,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssdkfk.video-play-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -595,7 +598,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssdkfk.video-play-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -615,7 +618,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssdkfk.video-play-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/video_play_app.app/video_play_app";
 			};
@@ -636,7 +639,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssdkfk.video-play-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/video_play_app.app/video_play_app";
 			};
@@ -656,7 +659,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssdkfk.video-play-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = video_play_app;
 			};
@@ -676,7 +679,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssdkfk.video-play-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = video_play_app;
 			};
