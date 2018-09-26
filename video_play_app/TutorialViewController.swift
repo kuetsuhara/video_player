@@ -62,7 +62,6 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - ScroiiViewDelegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.x)
         let pageWidth: CGFloat = scrollView.frame.size.width
         let pageNum: CGFloat = scrollView.contentOffset.x / pageWidth
         self.pageControle.currentPage = Int(pageNum)
