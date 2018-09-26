@@ -2,16 +2,17 @@
 //  TutorialViewController.swift
 //  video_play_app
 //
-//  Created by 上津原 一利 [NEXT] on 2018/09/25.
+//  Created by Kazutoshi Uetsuhara on 2018/09/25.
 //  Copyright © 2018年 Kazutoshi Uetsuhara. All rights reserved.
 //
 
 import UIKit
 
-class TutorialViewController: UIViewController {
+class TutorialViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var pageControle: UIPageControl!
     
     // image files
     private let img:[String] = ["tutorial_0","tutorial_1","tutorial_2","tutorial_3"]
@@ -19,9 +20,15 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // delegate
+        scrollView.delegate = self
+        
         // skip button action
         self.skipButton.addTarget(self, action: #selector(buttonEvent(sender:)), for: UIControlEvents.touchUpInside)
         
+        // page controle
+        self.pageControle.currentPageIndicatorTintColor = UIColor.blue
+        self.pageControle.pageIndicatorTintColor = UIColor.gray
     }
     
     
@@ -51,14 +58,20 @@ class TutorialViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - ScroiiViewDelegate
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.x)
+        let pageWidth: CGFloat = scrollView.frame.size.width
+        let pageNum: CGFloat = scrollView.contentOffset.x / pageWidth
+        self.pageControle.currentPage = Int(pageNum)
+        
+        if pageNum == 3 {
+            self.skipButton.setTitle("Go", for: UIControlState.normal)
+        }
+        
     }
-    */
+
 
 }
