@@ -10,6 +10,8 @@
 		13C403AADD696E319304464A /* Pods_video_play_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4D6B61F301A9FA7CE195A0 /* Pods_video_play_appTests.framework */; };
 		8B9EFCA984152B83F1B45DFA /* Pods_video_play_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B5EF4A44D6236213B31AA9 /* Pods_video_play_appUITests.framework */; };
 		B5F423EDF182884E09D0E3E9 /* Pods_video_play_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980CEEAF5F83091B6D620E37 /* Pods_video_play_app.framework */; };
+		CE9C8D55215A099B00E943F8 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C8D53215A099B00E943F8 /* TutorialViewController.swift */; };
+		CE9C8D56215A099B00E943F8 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8D54215A099B00E943F8 /* TutorialViewController.xib */; };
 		CED736342153AA5300B6FE6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED736332153AA5300B6FE6C /* AppDelegate.swift */; };
 		CED7363B2153AA5400B6FE6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED7363A2153AA5400B6FE6C /* Assets.xcassets */; };
 		CED736492153AA5400B6FE6C /* video_play_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED736482153AA5400B6FE6C /* video_play_appTests.swift */; };
@@ -46,6 +48,8 @@
 		980CEEAF5F83091B6D620E37 /* Pods_video_play_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_video_play_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A38AE38AFFD237DFF0EE36CF /* Pods-video_play_appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-video_play_appUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-video_play_appUITests/Pods-video_play_appUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B6AC4DA6F86A0F7E76EF038A /* Pods-video_play_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-video_play_appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-video_play_appTests/Pods-video_play_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE9C8D53215A099B00E943F8 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		CE9C8D54215A099B00E943F8 /* TutorialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		CED736302153AA5300B6FE6C /* video_play_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = video_play_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED736332153AA5300B6FE6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED7363A2153AA5400B6FE6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				CEF8B4622153AE0400863261 /* PlayListTableViewController.swift */,
 				CEEFEE9F215483E3000582FE /* PlayListTableViewCell.swift */,
 				CEEFEEA72154CD45000582FE /* LandscapePlayerViewController.swift */,
+				CE9C8D53215A099B00E943F8 /* TutorialViewController.swift */,
 				CED7363A2153AA5400B6FE6C /* Assets.xcassets */,
 				CED7363F2153AA5400B6FE6C /* Info.plist */,
 				CEF8B4662153AE8200863261 /* xib */,
@@ -177,6 +182,7 @@
 			children = (
 				CEF8B4632153AE0400863261 /* PlayListTableViewController.xib */,
 				CEEFEEA0215483E3000582FE /* PlayListTableViewCell.xib */,
+				CE9C8D54215A099B00E943F8 /* TutorialViewController.xib */,
 				CEDFCF4C2154D7950049CBD4 /* LaunchScreen.xib */,
 			);
 			path = xib;
@@ -291,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEDFCF4D2154D7950049CBD4 /* LaunchScreen.xib in Resources */,
+				CE9C8D56215A099B00E943F8 /* TutorialViewController.xib in Resources */,
 				CED7363B2153AA5400B6FE6C /* Assets.xcassets in Resources */,
 				CEEFEEA2215483E3000582FE /* PlayListTableViewCell.xib in Resources */,
 				CEF8B4652153AE0400863261 /* PlayListTableViewController.xib in Resources */,
@@ -403,6 +410,7 @@
 			files = (
 				CED736342153AA5300B6FE6C /* AppDelegate.swift in Sources */,
 				CEEFEEA82154CD45000582FE /* LandscapePlayerViewController.swift in Sources */,
+				CE9C8D55215A099B00E943F8 /* TutorialViewController.swift in Sources */,
 				CEF8B4642153AE0400863261 /* PlayListTableViewController.swift in Sources */,
 				CEEFEEA1215483E3000582FE /* PlayListTableViewCell.swift in Sources */,
 			);
