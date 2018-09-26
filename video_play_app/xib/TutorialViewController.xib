@@ -27,7 +27,7 @@
                     <rect key="frame" x="172.5" y="617" width="30" height="30"/>
                     <state key="normal" title="Skip"/>
                 </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-oQ-Omh">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-oQ-Omh">
                     <rect key="frame" x="0.0" y="20" width="375" height="581"/>
                     <color key="backgroundColor" red="0.81147836539999996" green="0.81147836539999996" blue="0.81147836539999996" alpha="1" colorSpace="calibratedRGB"/>
                 </scrollView>
